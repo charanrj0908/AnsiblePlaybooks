@@ -1,0 +1,12 @@
+---
+-
+ hosts : linux
+ tasks:
+   - name : Install Nginx CentOS
+     yum  :
+       name : nginx
+       update_cache : yes
+       state : latest
+     when : ansible_distribution == 'centOS'
+
+...

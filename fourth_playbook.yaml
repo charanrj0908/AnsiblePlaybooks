@@ -1,0 +1,10 @@
+-
+ hosts : linux
+ tasks :
+   - name : Install Nginx ubuntu
+     apt  : 
+      name : nginx
+      update_cache : yes
+      state : latest
+     when : ansible_distribution == 'ubuntu'
+

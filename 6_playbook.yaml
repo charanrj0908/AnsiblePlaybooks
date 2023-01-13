@@ -1,0 +1,7 @@
+-
+ tasks:
+   - name : 'template index.html-base.j2 to index.html on target'
+     template:
+       src : index.html-base.j2
+       dest: "{{nginx-root-location}}/index.html"
+       mode : 0644        

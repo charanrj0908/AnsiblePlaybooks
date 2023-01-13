@@ -1,0 +1,23 @@
+-
+ hosts : linux
+ tasks :
+   - name : Install nginx
+     package :
+       name : nginx
+       state : latest
+
+   - name : restart nginx
+     service :
+       name : nginx
+       state : restarted
+     notify : check Http service
+
+
+ handlers :
+   - name : check HTTP service
+     uri  :
+       url : http://{{ansible_default_ipv4.address}}
+       status_code : 200
+
+
+
